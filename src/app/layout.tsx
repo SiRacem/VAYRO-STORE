@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import React, { Suspense } from 'react';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { CartProvider } from '@/context/CartContext';
 import Navbar from '@/components/layout/Navbar';
@@ -51,7 +52,9 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-white text-zinc-900 antialiased selection:bg-black selection:text-white">
         <LanguageProvider>
           <CartProvider>
-            <Navbar />
+            <Suspense fallback={<div className="h-20 bg-white" />}>
+              <Navbar />
+            </Suspense>
             <main className="flex-1">{children}</main>
             <CartDrawer />
             <Footer />
