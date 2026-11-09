@@ -47,8 +47,31 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ClothingStore',
+    name: 'VAYRO',
+    description: 'ماركة ملابس تونسية عصرية بتصاميم ستريت وير مينيمالست وجودة فائقة.',
+    url: 'https://vayro.tn',
+    currenciesAccepted: 'TND',
+    paymentAccepted: 'Cash on Delivery',
+    priceRange: '$$',
+    telephone: '+21629660432',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'TN',
+    },
+    sameAs: ['https://www.instagram.com/vayro_.official/'],
+  };
+
   return (
     <html lang="ar" dir="rtl" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-screen flex flex-col bg-white text-zinc-900 antialiased selection:bg-black selection:text-white">
         <LanguageProvider>
           <CartProvider>

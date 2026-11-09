@@ -168,8 +168,39 @@ function ProductDetailContent() {
 
   const relatedProducts = INITIAL_PRODUCTS.filter((p) => p.id !== product.id).slice(0, 4);
 
+  const productJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: productName,
+    description: productDescription,
+    image: galleryImages,
+    brand: {
+      '@type': 'Brand',
+      name: 'VAYRO',
+    },
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'TND',
+      price: product.price,
+      availability: isOutOfStock
+        ? 'https://schema.org/OutOfStock'
+        : 'https://schema.org/InStock',
+      url: `https://vayro.tn/products/${product.slug}`,
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: reviews.length,
+    },
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14">
+      {/* Product JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
       {/* Breadcrumb Navigation */}
       <nav className="text-xs font-semibold text-zinc-400 mb-6 flex items-center gap-2">
         <a href="/" className="hover:text-black transition">
