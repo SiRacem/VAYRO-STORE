@@ -20,8 +20,8 @@ flowchart LR
     style P1 fill:#dcfce7,stroke:#16a34a,stroke-width:2px
     style P2 fill:#dcfce7,stroke:#16a34a,stroke-width:2px
     style P3 fill:#dcfce7,stroke:#16a34a,stroke-width:2px
-    style P4 fill:#fef9c3,stroke:#ca8a04,stroke-width:2px
-    style P5 fill:#f1f5f9,stroke:#64748b,stroke-width:1px
+    style P4 fill:#dcfce7,stroke:#16a34a,stroke-width:2px
+    style P5 fill:#fef9c3,stroke:#ca8a04,stroke-width:2px
     style P6 fill:#f1f5f9,stroke:#64748b,stroke-width:1px
     style P7 fill:#f1f5f9,stroke:#64748b,stroke-width:1px
 ```
@@ -66,7 +66,21 @@ flowchart LR
 
 ---
 
-## 🟡 المرحلة 4: حساب العميل والتتبع (قيد التنفيذ ⏳)
+## 🟢 المرحلة 4: حساب العميل والتتبع (مكتملة 100%)
+
+- [x] **4.1 صفحة تتبع الطلبات (`/track`)**:
+  - استعلام فوري برقم الطلب (مثال: `#VAYRO-4829`) من Supabase.
+  - خط زمني مرئي (Stepper) من 4 مراحل: (تم الاستلام → التجهيز والتغليف → مع المندوب → تم التسليم).
+  - بطاقة العنوان وتفاصيل الشحنة مع زر استفسار فوري عبر WhatsApp.
+- [x] **4.2 صفحة قائمة المفضلة (`/wishlist`)**:
+  - حفظ وعرض المنتجات المحفوظة محلياً مع إمكانية إضافتها فورياً للسلة.
+- [x] **4.3 بوابة العميل ونادي نقاط الولاء (`/account`)**:
+  - شاشة رصيد النقاط ومقدار الخصم المقابل بالدينار التونسي.
+  - حاسبة تفاعلية لقيمة النقاط والخصومات التقديرية.
+
+---
+
+## 🟡 المرحلة 5: الصفحات الثابتة والمحتوى (قيد التنفيذ ⏳)
 
 > **الهدف:** تسهيل تجربة الشراء للعميل التونسي بدون تعقيد، مع تحويل مباشر وسلس للواتساب.
 
