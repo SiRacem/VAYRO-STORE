@@ -11,6 +11,7 @@ import {
   X,
   Globe,
   ChevronDown,
+  User,
 } from 'lucide-react';
 import { useLanguage, Language } from '@/context/LanguageContext';
 import { useCart } from '@/context/CartContext';
@@ -160,6 +161,15 @@ export default function Navbar() {
                 </div>
               )}
             </div>
+
+            {/* Account / Rewards */}
+            <Link
+              href="/account"
+              className="p-2.5 rounded-full hover:bg-gray-100 text-gray-700 hover:text-black transition"
+              aria-label="Account and Rewards"
+            >
+              <User className="w-5 h-5" />
+            </Link>
 
             {/* Wishlist */}
             <Link
